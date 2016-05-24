@@ -4,6 +4,7 @@ import { FORM_PROVIDERS } from '@angular/common';
 import { ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { Http, HTTP_PROVIDERS } from '@angular/http';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
+import {TodoStore} from './store/todoStore';
 
 import { App } from './app/app';
 
@@ -20,6 +21,7 @@ bootstrap(
         }), http);
       },
       deps: [Http]
-    })
+    }),
+    TodoStore
   ]
 );

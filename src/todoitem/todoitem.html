@@ -1,0 +1,9 @@
+<div class="view">
+  <label style="background-color: {{item.color}}">{{item.text}}</label>
+  <div class="colorPanel" style="display: {{display}}">
+    <button (click)="setCol('red')">Красный</button>
+  </div>
+  <button (click)="doneClicked()" class="btm destroy"></button>
+  <button (click)="clickColor()" class="btm color"></button>
+  <button (click)="edit()" class="btm edit"></button>
+</div>

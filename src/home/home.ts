@@ -3,6 +3,8 @@ import { CORE_DIRECTIVES } from '@angular/common';
 import { Http, Headers } from '@angular/http';
 import { Router } from '@angular/router-deprecated';
 import { AuthHttp } from 'angular2-jwt';
+import ToDoList from './../todolist/todolist';
+import {TodoStore} from './../store/todoStore';
 
 let styles = require('./home.css');
 let template = require('./home.html');
@@ -10,7 +12,7 @@ let template = require('./home.html');
 
 @Component({
   selector: 'home',
-  directives: [CORE_DIRECTIVES],
+  directives: [[CORE_DIRECTIVES], ToDoList],
   template: template,
   styles: [styles]
 })
@@ -19,14 +21,17 @@ export class Home {
   decodedJwt: string;
   response: string;
   api: string;
+  store: TodoStore;
 
-  constructor(public router: Router, public http: Http, public authHttp: AuthHttp) {
+  constructor(public router: Router, public http: Http, public authHttp: AuthHttp, store: TodoStore) {
+    this.store = store;
     this.jwt = localStorage.getItem('jwt');
     this.decodedJwt = this.jwt && window.jwt_decode(this.jwt);
   }
 
   logout() {
     localStorage.removeItem('jwt');
+    this.store.clear();
     this.router.parent.navigateByUrl('/login');
   }
 

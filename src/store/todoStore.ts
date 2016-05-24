@@ -1,0 +1,28 @@
+export class TodoItem {
+  text: String;
+  color: String;
+}
+
+export class TodoStore {
+  items: TodoItem[];
+
+  constructor() {
+    this.items = [];
+  }
+
+  addItem(newItem: String, newColor: String) {
+    this.items.push({
+      text: newItem,
+      color: newColor
+    });
+  }
+
+  removeItem(item: TodoItem) {
+    const index = this.items.indexOf(item);
+    this.items.splice(index, 1);
+  }
+
+  clear() {
+    this.items = [];
+  }
+}

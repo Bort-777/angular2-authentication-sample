@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/auth0/angular2-authentication-sample",
   "dependencies": {
+    "ng2-facebook": "0.0.1",
+    "angular2": "2.0.0-beta.6",
     "@angular/common": "2.0.0-rc.1",
     "@angular/compiler": "2.0.0-rc.1",
     "@angular/core": "2.0.0-rc.1",
