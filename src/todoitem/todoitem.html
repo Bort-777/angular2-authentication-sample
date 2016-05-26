@@ -1,7 +1,12 @@
 <div class="view">
-  <label style="background-color: {{item.color}}">{{item.text}}</label>
-  <div class="colorPanel" style="display: {{display}}">
-    <button (click)="setCol('red')">Красный</button>
+  <p class="{{item.color}}">{{item.text}}</p>
+  <div class="colorPanel {{display}}">
+    <button class="btn btn-primary btn-lg" (click)="setCol('blue')">Blue</button>
+    <button class="btn btn-primary btn-lg" (click)="setCol('white')">White</button>
+    <button class="btn btn-primary btn-lg" (click)="setCol('black')">Black</button>
+    <button class="btn btn-primary btn-lg" (click)="setCol('red')">Red</button>
+    <button class="btn btn-primary btn-lg" (click)="setCol('green')">Green</button>
+    <button class="btn btn-primary btn-lg" (click)="setCol('yellow')">Yellow</button>
   </div>
   <button (click)="doneClicked()" class="btm destroy"></button>
   <button (click)="clickColor()" class="btm color"></button>

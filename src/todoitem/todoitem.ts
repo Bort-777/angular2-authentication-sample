@@ -10,7 +10,7 @@ let template = require('./todoitem.html');
   styles  : [ styles ]
 })
 export default class TodoItem {
-  display = 'none';
+  display = 'hidden';
   @Input()
   item: TodoItemModel;
 
@@ -26,18 +26,19 @@ export default class TodoItem {
   }
 
   clickColor() {
+    console.log(this.display);
     switch (this.display) {
-      case 'none':
-          this.display= 'inline';
+      case 'hidden':
+          this.display= '';
         break;
-      case 'inline':
-          this.display = 'none';
+      case '':
+          this.display = 'hidden';
         break;
     }
   }
 
   setCol(color: String) {
-    this.item.color = 'red';
+    this.item.color = color;
   }
 
   edit() {

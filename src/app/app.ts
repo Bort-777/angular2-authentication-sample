@@ -5,6 +5,7 @@ import {LoggedInRouterOutlet} from './LoggedInOutlet';
 import {Home} from '../home/home';
 import {Login} from '../login/login';
 import {Signup} from '../signup/signup';
+import {Cat} from '../cat/cat';
 
 let template = require('./app.html');
 
@@ -17,7 +18,8 @@ let template = require('./app.html');
   { path: '/', redirectTo: ['/Home'] },
   { path: '/home', component: Home, as: 'Home' },
   { path: '/login', component: Login, as: 'Login' },
-  { path: '/signup', component: Signup, as: 'Signup' }
+  { path: '/signup', component: Signup, as: 'Signup' },
+  { path: '/cat', component: Cat, as: 'Cat' }
 ])
 
 export class App {

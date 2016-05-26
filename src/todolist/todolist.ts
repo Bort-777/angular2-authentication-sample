@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {TodoStore, TodoItem as TodoModelItem} from './../store/todoStore';
 import TodoItem from '../todoitem/todoitem';
+import { NgGrid, NgGridItem } from 'angular2-grid';
 
 let template = require('./todolist.html');
 let styles = require('./todolist.css');
@@ -9,11 +10,11 @@ let styles = require('./todolist.css');
   selector: 'todo-list',
   template: template,
   styles: [ styles ],
-  directives: [[TodoItem]]
+  directives: [TodoItem, NgGrid, NgGridItem]
 })
 export default class ToDoList {
   newItem = 'test';
-  newColor = 'white';
+  newColor = 'black';
   store: TodoStore;
 
   constructor(store: TodoStore) {

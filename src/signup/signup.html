@@ -1,5 +1,5 @@
 <div class="signup center-block jumbotron">
-  <h1>Signup</h1>
+  
   <form role="form" (submit)="signup($event, username.value, password.value)">
   <div class="form-group">
     <label for="username">Username</label>
@@ -15,6 +15,7 @@
   <button type="submit" class="btn btn-default"
   (click)="signupFB($event, username.value, password.value)">FB</button>
   <button type="submit" class="btn btn-default"
-  (click)="signupTR($event, username.value, password.value)">TWTR</button>
+  (click)="signupTR($event, username.value, password.value)">TR</button>
+  <a href="/login">Log in</a>
 </form>
 </div>

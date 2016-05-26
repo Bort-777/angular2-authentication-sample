@@ -1,9 +1,43 @@
+
+
+.grid-item {
+	/*position: absolute;*/
+}
+
+.grid-item:active, .grid-item.moving {
+
+}
+
+.grid-placeholder {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+	.grid {
+		width: 100% !important;
+		height: auto !important;
+		padding: 10px;
+	}
+	.grid-item {
+		position: static !important;
+		width: 100% !important;
+		margin-bottom: 10px
+	}
+	.grid-item:last-child {
+		margin-bottom: 0;
+	}
+}
+
+/*////*/
+.view {
+	/*width: auto;
+	word-wrap: break-word;*/
+}
 label {
   white-space: pre;
   word-break: break-word;
   padding: 15px 60px 15px 15px;
-  margin-left: 45px;
-  display: block;
+  display: inline-block;
   line-height: 1.2;
   transition: color 0.4s;
 }
@@ -13,19 +47,41 @@ label.completed {
   text-decoration: line-through;
 }
 
+.hidden {
+  display: none;
+}
+
+.blue {
+  color: blue;
+  background-color: #fff;
+}
+.white {
+  color: blue;
+  background-color: #286090;
+}
+.yellow {
+  color: yellow;
+  background-color: black;
+}
+.black {
+  color: black;
+  background-color: #fff;
+}
+.red {
+  color: red;
+  background-color: #fff;
+}
+.green {
+  color: green;
+}
+
 .btm {
   display: none;
-  position: absolute;
-  top: 0;
-  right: 10px;
-  bottom: 0;
-  width: 40px;
-  height: 40px;
+
   margin: auto 0;
   font-size: 30px;
-  color: #cc9a9a;
-  margin-bottom: 11px;
-  transition: color 0.2s ease-out;
+  color: #286090;
+
   border: 0;
   background-color: transparent;
 }
@@ -35,7 +91,7 @@ label.completed {
 }
 
 .view:hover .btm {
-  display: block;
+  display: inline-block;
 }
 .color {
   right: 30px;
@@ -72,11 +128,16 @@ label.completed {
 }
 
 .toggle:after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
+	 width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50"
+	 fill="none" stroke="#ededed" stroke-width="3"/></svg>');
 }
 
 .toggle:checked:after {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"
+	 width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50"
+	 fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af"
+	 d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
 }
 
 .toggle {

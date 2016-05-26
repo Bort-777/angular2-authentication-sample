@@ -1,0 +1,10 @@
+<canvas #chessCanvas class='chess-diag'
+     [attr.width]='1000'
+     [attr.height]='1000'
+     style="position: absolute"
+     (mousedown)="ev_canvas($event)"
+     (mousemove)="ev_canvas($event)"
+     (mouseup)="ev_canvas($event)"
+     (mouseout)="ev_canvas($event)"
+     >
+  </canvas>

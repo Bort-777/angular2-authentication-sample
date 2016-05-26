@@ -5,6 +5,7 @@ import { Router } from '@angular/router-deprecated';
 import { AuthHttp } from 'angular2-jwt';
 import ToDoList from './../todolist/todolist';
 import {TodoStore} from './../store/todoStore';
+import {Cat} from './../cat/cat';
 
 let styles = require('./home.css');
 let template = require('./home.html');
@@ -12,7 +13,7 @@ let template = require('./home.html');
 
 @Component({
   selector: 'home',
-  directives: [[CORE_DIRECTIVES], ToDoList],
+  directives: [[CORE_DIRECTIVES], ToDoList, Cat],
   template: template,
   styles: [styles]
 })

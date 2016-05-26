@@ -1,16 +1,18 @@
 <section class="todoapp">
   <header class="header">
-    <h1>todos</h1>
     <input class="new-todo" placeholder="What needs to be done?" autofocus
         [(ngModel)]="newItem" (keyup.enter)="addItem()">
     <button class="add" (click)="addItem()">Add</button>
   </header>
-  <section class="main">
-    <ul class="todo-list">
+  <section class="main" [ngGrid]="{'auto_resize': true,
+                                    'max_cols': 1,
+                                    'row_height': 50,
+                                    'min_height': 50 }" >
+    <ul class="todo-list " >
       <li *ngFor="#item of store.items" >
         <todo-item [item]="item"
           (done)="removeItem($event)"
-          (editData)="edit($event)">
+          (editData)="edit($event)" class="" [ngGridItem]="{'sizex': 1, 'sizey': 1}">
         </todo-item>
       </li>
     </ul>
